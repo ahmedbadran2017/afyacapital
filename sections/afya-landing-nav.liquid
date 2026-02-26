@@ -1,0 +1,28 @@
+<nav aria-label="Main navigation">
+  <a href="/" class="nav-logo">
+    <img src="{{ 'logo-afya-icon.svg' | asset_url }}" alt="Afya Capital" class="logo-mark" width="40" height="40">
+    <div class="logo-text-group">
+      <div class="logo-name">Afya <span>Capital</span></div>
+      <div class="logo-tagline">Healthcare Investment</div>
+    </div>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#network">Our Network</a>
+    <a href="#partnerships">Partnerships</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#contact" class="nav-cta">Invest With Us</a>
+  </div>
+  <button type="button" class="nav-hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+{% schema %}
+{
+  "name": "Landing Nav",
+  "settings": []
+}
+{% endschema %}

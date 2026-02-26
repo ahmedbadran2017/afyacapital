@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "landing": {
+      "type": "afya-landing",
+      "settings": {}
+    }
+  },
+  "order": ["landing"]
+}
