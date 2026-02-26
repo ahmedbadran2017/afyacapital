@@ -1,19 +1,23 @@
 /* ==========================================================================
    Afya Capital — Healthcare Investment Landing Page
-   Unified dark theme with modern styling
-   Fonts: Alexandria (primary) + Playfair Display italic (accent)
+   Modern business theme inspired by Corex Home Strategist
+   Font: DM Sans | Accent: #fa510f (orange)
    ========================================================================== */
 
 :root {
-  --deep: #08111e;
-  --navy: #0d1f35;
-  --teal: #0e7c6e;
-  --teal-light: #14a892;
-  --gold: #c8963e;
-  --gold-light: #e8b96a;
-  --cream: #f4efe6;
-  --muted: rgba(244, 239, 230, 0.75);
-  --border: rgba(255, 255, 255, 0.07);
+  --main: #fa510f;
+  --main-hover: #e04500;
+  --black: #101824;
+  --black-lighter: #333b47;
+  --gray: #f0f3f4;
+  --gray-light: #eeeee5;
+  --white: #ffffff;
+  --yellow: #e8bf69;
+  --green: #16bd74;
+  --border: rgba(16, 24, 36, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.1);
+  --muted: #6b7280;
+  --muted-light: rgba(255, 255, 255, 0.65);
   --max-w: 1320px;
 }
 
@@ -28,32 +32,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 76px;
-}
-
-/* --- Skip Link --- */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 16px;
-  z-index: 300;
-  padding: 12px 24px;
-  background: var(--teal);
-  color: var(--cream);
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 0 0 8px 8px;
-  transition: top 0.2s;
-}
-
-.skip-link:focus {
-  top: 0;
 }
 
 body {
-  font-family: 'Alexandria', sans-serif;
-  background: var(--deep);
-  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
   overflow-x: hidden;
 }
 
@@ -87,7 +71,7 @@ button {
 
 /* --- Focus styles --- */
 :focus-visible {
-  outline: 2px solid var(--teal-light);
+  outline: 2px solid var(--main);
   outline-offset: 3px;
 }
 
@@ -102,11 +86,11 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--deep);
+  background: var(--gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--teal);
+  background: var(--main);
   border-radius: 2px;
 }
 
@@ -124,9 +108,14 @@ nav {
   justify-content: space-between;
   padding: 0 56px;
   height: 76px;
-  background: rgba(8, 17, 30, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+nav.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
 .nav-logo {
@@ -139,7 +128,6 @@ nav {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
-  border-radius: 0;
 }
 
 .logo-text-group {
@@ -151,19 +139,19 @@ nav {
 .logo-name {
   font-size: 21px;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  color: var(--cream);
+  letter-spacing: -0.5px;
+  color: var(--black);
 }
 
 .logo-name span {
-  color: var(--gold);
+  color: var(--main);
 }
 
 .logo-tagline {
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: var(--muted);
   margin-top: 3px;
   font-weight: 500;
 }
@@ -175,30 +163,32 @@ nav {
 }
 
 .nav-links a {
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.02em;
   font-weight: 500;
-  color: rgba(244, 239, 230, 0.75);
+  color: var(--black-lighter);
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--teal-light);
+  color: var(--main);
 }
 
 a.nav-cta {
-  padding: 9px 24px;
-  border: 1px solid var(--teal-light);
-  color: var(--teal-light);
+  padding: 10px 28px;
+  background: var(--main);
+  color: var(--white);
   border-radius: 50px;
+  border: 1px solid var(--main);
+  font-weight: 600;
+  font-size: 13px;
   transition: all 0.3s;
 }
 
 a.nav-cta:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: var(--cream);
+  background: var(--main-hover);
+  border-color: var(--main-hover);
+  color: var(--white);
 }
 
 /* Mobile menu toggle */
@@ -214,7 +204,7 @@ a.nav-cta:hover {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--cream);
+  background: var(--black);
   border-radius: 2px;
   transition: transform 0.3s, opacity 0.2s;
 }
@@ -232,7 +222,7 @@ a.nav-cta:hover {
 }
 
 /* ==========================================================================
-   Hero
+   Hero — Dark section with person image (Corex Strategist style)
    ========================================================================== */
 #hero {
   position: relative;
@@ -240,6 +230,7 @@ a.nav-cta:hover {
   display: flex;
   align-items: center;
   overflow: hidden;
+  background: var(--black);
 }
 
 .hero-image {
@@ -254,8 +245,8 @@ a.nav-cta:hover {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(8, 17, 30, 0.96) 0%, rgba(8, 17, 30, 0.82) 45%, rgba(8, 17, 30, 0.45) 100%),
-    linear-gradient(to top, rgba(8, 17, 30, 0.7) 0%, transparent 50%);
+    linear-gradient(105deg, rgba(16, 24, 36, 0.96) 0%, rgba(16, 24, 36, 0.82) 45%, rgba(16, 24, 36, 0.45) 100%),
+    linear-gradient(to top, rgba(16, 24, 36, 0.7) 0%, transparent 50%);
 }
 
 .hero-glow {
@@ -265,7 +256,7 @@ a.nav-cta:hover {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 124, 110, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(250, 81, 15, 0.12) 0%, transparent 70%);
   animation: pulse 6s ease-in-out infinite;
 }
 
@@ -292,14 +283,14 @@ a.nav-cta:hover {
 .hero-eyebrow-line {
   width: 36px;
   height: 1px;
-  background: var(--teal-light);
+  background: var(--main);
 }
 
 .hero-eyebrow span {
   font-size: 11px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: var(--main);
   font-weight: 500;
 }
 
@@ -307,26 +298,26 @@ a.nav-cta:hover {
   font-size: clamp(44px, 6vw, 78px);
   font-weight: 700;
   line-height: 1.08;
+  letter-spacing: -1px;
   margin-bottom: 28px;
-  color: var(--cream);
+  color: var(--white);
   animation: fadeUp 0.7s ease 0.25s both;
 }
 
 h1 .italic {
-  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--main);
 }
 
 h1 .accent {
-  color: var(--teal-light);
+  color: var(--main);
 }
 
 .hero-body {
   font-size: 16px;
   line-height: 1.85;
-  color: var(--muted);
+  color: var(--muted-light);
   max-width: 540px;
   margin-bottom: 48px;
   font-weight: 400;
@@ -343,28 +334,28 @@ h1 .accent {
 /* --- Buttons --- */
 .btn-gold {
   padding: 15px 38px;
-  background: var(--teal);
-  color: var(--cream);
+  background: var(--main);
+  color: var(--white);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
   transition: all 0.3s;
-  border: 1px solid var(--teal);
+  border: 1px solid var(--main);
   border-radius: 50px;
   display: inline-block;
 }
 
 .btn-gold:hover {
-  background: var(--teal-light);
-  border-color: var(--teal-light);
+  background: var(--main-hover);
+  border-color: var(--main-hover);
 }
 
 .btn-ghost {
   padding: 15px 38px;
   background: transparent;
-  border: 1px solid rgba(244, 239, 230, 0.2);
-  color: var(--cream);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -375,8 +366,28 @@ h1 .accent {
 }
 
 .btn-ghost:hover {
-  border-color: var(--teal-light);
-  color: var(--teal-light);
+  border-color: var(--main);
+  color: var(--main);
+}
+
+/* Light variant ghost button for light sections */
+.btn-ghost-dark {
+  padding: 15px 38px;
+  background: transparent;
+  border: 1px solid var(--black);
+  color: var(--black);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.3s;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.btn-ghost-dark:hover {
+  border-color: var(--main);
+  color: var(--main);
 }
 
 /* --- Hero Stats Bar --- */
@@ -387,8 +398,8 @@ h1 .accent {
   right: 0;
   z-index: 2;
   display: flex;
-  border-top: 1px solid var(--border);
-  background: rgba(8, 17, 30, 0.75);
+  border-top: 1px solid var(--border-dark);
+  background: rgba(16, 24, 36, 0.8);
   backdrop-filter: blur(12px);
   animation: fadeUp 0.7s ease 0.7s both;
 }
@@ -396,7 +407,7 @@ h1 .accent {
 .hstat {
   flex: 1;
   padding: 28px 40px;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--border-dark);
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -409,7 +420,7 @@ h1 .accent {
 .hstat-num {
   font-size: 44px;
   font-weight: 600;
-  color: var(--teal-light);
+  color: var(--main);
   line-height: 1;
 }
 
@@ -417,7 +428,7 @@ h1 .accent {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--muted-light);
 }
 
 /* ==========================================================================
@@ -442,14 +453,14 @@ section {
   content: '';
   width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: var(--main);
 }
 
 .eyebrow span {
   font-size: 10px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--main);
   font-weight: 600;
 }
 
@@ -457,15 +468,15 @@ h2 {
   font-size: clamp(30px, 3.5vw, 48px);
   font-weight: 700;
   line-height: 1.18;
+  letter-spacing: -1px;
   margin-bottom: 20px;
-  color: var(--cream);
+  color: var(--black);
 }
 
 h2 em {
-  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--main);
 }
 
 .lead {
@@ -478,10 +489,10 @@ h2 em {
 }
 
 /* ==========================================================================
-   About
+   About — Light gray background (Corex style)
    ========================================================================== */
 #about {
-  background: var(--navy);
+  background: var(--gray);
   position: relative;
   overflow: hidden;
 }
@@ -494,7 +505,7 @@ h2 em {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 124, 110, 0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(250, 81, 15, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -523,7 +534,7 @@ h2 em {
   right: -20px;
   width: 140px;
   height: 140px;
-  background: var(--teal);
+  background: var(--main);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -534,7 +545,7 @@ h2 em {
 .badge-num {
   font-size: 38px;
   font-weight: 700;
-  color: var(--cream);
+  color: var(--white);
   line-height: 1;
 }
 
@@ -542,7 +553,7 @@ h2 em {
   font-size: 9px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(244, 239, 230, 0.85);
+  color: rgba(255, 255, 255, 0.85);
   margin-top: 4px;
   font-weight: 600;
   text-align: center;
@@ -569,22 +580,22 @@ h2 em {
   padding: 22px 24px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.3s, background 0.3s;
+  background: var(--white);
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 
 .pillar:hover {
-  border-color: rgba(20, 168, 146, 0.3);
-  background: rgba(14, 124, 110, 0.05);
+  border-color: rgba(250, 81, 15, 0.3);
+  box-shadow: 0 4px 20px rgba(250, 81, 15, 0.06);
 }
 
 .pillar-icon {
   width: 52px;
   height: 52px;
   flex-shrink: 0;
-  background: rgba(20, 168, 146, 0.1);
+  background: rgba(250, 81, 15, 0.08);
   border-radius: 50%;
-  border: 1px solid rgba(20, 168, 146, 0.2);
+  border: 1px solid rgba(250, 81, 15, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -593,7 +604,7 @@ h2 em {
 .pillar-icon svg {
   width: 22px;
   height: 22px;
-  stroke: var(--teal-light);
+  stroke: var(--main);
   fill: none;
   stroke-width: 1.8;
 }
@@ -602,6 +613,7 @@ h2 em {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 4px;
+  color: var(--black);
 }
 
 .pillar-body p {
@@ -611,10 +623,10 @@ h2 em {
 }
 
 /* ==========================================================================
-   Network (Countries)
+   Network (Countries) — White background
    ========================================================================== */
 #network {
-  background: var(--deep);
+  background: var(--white);
 }
 
 .countries-grid {
@@ -626,7 +638,7 @@ h2 em {
 .country-card {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--gray);
   border-radius: 8px;
 }
 
@@ -635,12 +647,12 @@ h2 em {
   height: 180px;
   object-fit: cover;
   display: block;
-  filter: brightness(0.6) saturate(0.7);
+  filter: brightness(0.75) saturate(0.8);
   transition: filter 0.5s, transform 0.5s;
 }
 
 .country-card:hover .country-img {
-  filter: brightness(0.75) saturate(0.9);
+  filter: brightness(0.85) saturate(1);
   transform: scale(1.03);
 }
 
@@ -662,13 +674,14 @@ h2 em {
 .cname {
   font-size: 24px;
   font-weight: 600;
+  color: var(--black);
 }
 
 .crole {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: var(--main);
   margin-bottom: 10px;
   font-weight: 500;
 }
@@ -691,9 +704,9 @@ h2 em {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 4px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
   border-radius: 50px;
-  color: rgba(244, 239, 230, 0.7);
+  color: var(--muted);
 }
 
 .country-card-more {
@@ -702,7 +715,7 @@ h2 em {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: rgba(14, 124, 110, 0.06);
+  background: rgba(250, 81, 15, 0.04);
   min-height: 340px;
 }
 
@@ -719,7 +732,7 @@ h2 em {
 .more-num {
   font-size: 56px;
   font-weight: 600;
-  color: var(--teal-light);
+  color: var(--main);
   line-height: 1;
 }
 
@@ -758,7 +771,7 @@ h2 em {
 .band-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(8, 17, 30, 0.95) 100%);
+  background: linear-gradient(to bottom, transparent 40%, rgba(16, 24, 36, 0.95) 100%);
   pointer-events: none;
 }
 
@@ -776,31 +789,31 @@ h2 em {
 .band-caption h3 {
   font-size: 36px;
   font-weight: 500;
-  color: var(--cream);
+  letter-spacing: -0.5px;
+  color: var(--white);
   max-width: 480px;
   line-height: 1.2;
 }
 
 .band-caption h3 em {
-  font-family: 'Playfair Display', serif;
   font-style: italic;
   font-weight: 400;
-  color: var(--gold);
+  color: var(--main);
 }
 
 .band-caption p {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--muted-light);
   max-width: 240px;
   text-align: right;
   line-height: 1.7;
 }
 
 /* ==========================================================================
-   Partnerships
+   Partnerships — Light gray background
    ========================================================================== */
 #partnerships {
-  background: var(--navy);
+  background: var(--gray);
 }
 
 .pship-grid {
@@ -811,30 +824,29 @@ h2 em {
 
 .pship-card {
   padding: 48px 44px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--white);
   border: 1px solid var(--border);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
-  transition: background 0.3s, border-color 0.3s;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 .pship-card:hover {
-  background: rgba(14, 124, 110, 0.05);
-  border-color: rgba(20, 168, 146, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border-color: rgba(250, 81, 15, 0.2);
 }
 
 /* Featured partnership card */
 .pship-featured {
-  border-color: rgba(20, 168, 146, 0.3);
-  background: rgba(14, 124, 110, 0.04);
-  border-left: 3px solid var(--teal-light);
+  border-color: rgba(250, 81, 15, 0.3);
+  border-left: 3px solid var(--main);
 }
 
 .pship-num {
   font-size: 68px;
   font-weight: 300;
-  color: rgba(20, 168, 146, 0.08);
+  color: rgba(250, 81, 15, 0.1);
   line-height: 1;
   margin-bottom: -16px;
 }
@@ -844,8 +856,8 @@ h2 em {
   height: 52px;
   margin-bottom: 22px;
   border-radius: 50%;
-  background: rgba(20, 168, 146, 0.1);
-  border: 1px solid rgba(20, 168, 146, 0.2);
+  background: rgba(250, 81, 15, 0.08);
+  border: 1px solid rgba(250, 81, 15, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -854,7 +866,7 @@ h2 em {
 .pship-icon svg {
   width: 22px;
   height: 22px;
-  stroke: var(--teal-light);
+  stroke: var(--main);
   fill: none;
   stroke-width: 1.8;
 }
@@ -863,6 +875,8 @@ h2 em {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: var(--black);
+  letter-spacing: -0.5px;
 }
 
 .pship-card p {
@@ -874,7 +888,7 @@ h2 em {
 
 .pship-card ul li {
   font-size: 13px;
-  color: rgba(244, 239, 230, 0.7);
+  color: var(--muted);
   padding: 8px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -884,17 +898,17 @@ h2 em {
 
 .pship-card ul li::before {
   content: '\2192';
-  color: var(--teal-light);
+  color: var(--main);
   flex-shrink: 0;
   font-size: 12px;
   margin-top: 1px;
 }
 
 /* ==========================================================================
-   O&M Model
+   O&M Model — White background
    ========================================================================== */
 #om {
-  background: var(--deep);
+  background: var(--white);
 }
 
 .om-layout {
@@ -922,8 +936,9 @@ h2 em {
   width: 48%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 4px solid var(--deep);
+  border: 4px solid var(--white);
   border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .om-text-lead {
@@ -944,18 +959,19 @@ h2 em {
   padding: 22px 20px;
   border: 1px solid var(--border);
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.3s;
+  background: var(--gray);
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .om-card:hover {
-  border-color: rgba(20, 168, 146, 0.3);
+  border-color: rgba(250, 81, 15, 0.3);
+  box-shadow: 0 4px 16px rgba(250, 81, 15, 0.06);
 }
 
 .om-card-n {
   font-size: 30px;
   font-weight: 600;
-  color: var(--teal-light);
+  color: var(--main);
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -964,6 +980,7 @@ h2 em {
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 6px;
+  color: var(--black);
 }
 
 .om-card p {
@@ -974,8 +991,8 @@ h2 em {
 
 .profit-box {
   padding: 28px 32px;
-  background: linear-gradient(135deg, rgba(14, 124, 110, 0.1), rgba(200, 150, 62, 0.06));
-  border: 1px solid rgba(14, 124, 110, 0.25);
+  background: linear-gradient(135deg, rgba(250, 81, 15, 0.06), rgba(232, 191, 105, 0.04));
+  border: 1px solid rgba(250, 81, 15, 0.2);
   border-radius: 12px;
 }
 
@@ -983,7 +1000,7 @@ h2 em {
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--teal-light);
+  color: var(--main);
   margin-bottom: 12px;
   font-weight: 600;
 }
@@ -995,11 +1012,11 @@ h2 em {
 }
 
 /* ==========================================================================
-   Impact Band
+   Impact Band — Orange accent (matching --main)
    ========================================================================== */
 .impact-band {
   padding: 90px 56px;
-  background: var(--teal);
+  background: var(--main);
   position: relative;
   overflow: hidden;
 }
@@ -1011,7 +1028,7 @@ h2 em {
   background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=60&auto=format&fit=crop');
   background-size: cover;
   background-position: center;
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 .impact-inner {
@@ -1033,7 +1050,7 @@ h2 em {
 .impact-num {
   font-size: 60px;
   font-weight: 600;
-  color: var(--cream);
+  color: var(--white);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -1042,14 +1059,14 @@ h2 em {
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(244, 239, 230, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* ==========================================================================
-   Expertise
+   Expertise — Dark section (Corex style contrast)
    ========================================================================== */
 #expertise {
-  background: var(--navy);
+  background: var(--black);
   position: relative;
 }
 
@@ -1066,6 +1083,26 @@ h2 em {
   position: relative;
 }
 
+#expertise h2 {
+  color: var(--white);
+}
+
+#expertise h2 em {
+  color: var(--main);
+}
+
+#expertise .eyebrow span {
+  color: var(--main);
+}
+
+#expertise .eyebrow::before {
+  background: var(--main);
+}
+
+#expertise .lead {
+  color: var(--muted-light);
+}
+
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1080,16 +1117,16 @@ h2 em {
 }
 
 .exp-item:hover {
-  background: rgba(14, 124, 110, 0.08);
+  background: rgba(250, 81, 15, 0.06);
 }
 
 .exp-icon {
   width: 52px;
   height: 52px;
   margin-bottom: 18px;
-  background: rgba(20, 168, 146, 0.12);
+  background: rgba(250, 81, 15, 0.1);
   border-radius: 50%;
-  border: 1px solid rgba(20, 168, 146, 0.2);
+  border: 1px solid rgba(250, 81, 15, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1098,7 +1135,7 @@ h2 em {
 .exp-icon svg {
   width: 22px;
   height: 22px;
-  stroke: var(--teal-light);
+  stroke: var(--main);
   fill: none;
   stroke-width: 1.8;
 }
@@ -1107,21 +1144,22 @@ h2 em {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
+  color: var(--white);
 }
 
 .exp-item p {
   font-size: 13px;
-  color: var(--muted);
+  color: var(--muted-light);
   line-height: 1.75;
 }
 
 /* ==========================================================================
-   Contact / CTA
+   Contact / CTA — Light gray section
    ========================================================================== */
 #contact {
   position: relative;
   overflow: hidden;
-  background: var(--deep);
+  background: var(--gray);
 }
 
 .contact-image {
@@ -1130,7 +1168,7 @@ h2 em {
   background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=70&auto=format&fit=crop');
   background-size: cover;
   background-position: center 60%;
-  opacity: 0.08;
+  opacity: 0.04;
 }
 
 .contact-inner {
@@ -1158,12 +1196,23 @@ h2 em {
   flex-wrap: wrap;
 }
 
+/* Contact section ghost button with dark border for light bg */
+#contact .btn-ghost {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+#contact .btn-ghost:hover {
+  border-color: var(--main);
+  color: var(--main);
+}
+
 /* ==========================================================================
-   Footer
+   Footer — Dark footer (Corex style)
    ========================================================================== */
 footer {
-  background: rgba(0, 0, 0, 0.5);
-  border-top: 1px solid var(--border);
+  background: var(--black);
+  border-top: 1px solid var(--border-dark);
   padding: 36px 56px;
   display: flex;
   align-items: center;
@@ -1178,30 +1227,42 @@ footer {
   gap: 12px;
 }
 
+.footer-logo .logo-name {
+  color: var(--white);
+}
+
+.footer-logo .logo-name span {
+  color: var(--main);
+}
+
+.footer-logo .logo-tagline {
+  color: var(--muted-light);
+}
+
 .footer-links {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 12px;
-  color: rgba(244, 239, 230, 0.6);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-links a {
-  color: var(--teal-light);
+  color: var(--main);
   transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: var(--cream);
+  color: var(--white);
 }
 
 .footer-sep {
-  color: rgba(244, 239, 230, 0.2);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 footer p {
   font-size: 12px;
-  color: rgba(244, 239, 230, 0.55);
+  color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.05em;
 }
 
@@ -1261,7 +1322,7 @@ footer p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(8, 17, 30, 0.98);
+    background: rgba(16, 24, 36, 0.98);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1275,7 +1336,11 @@ footer p {
 
   .nav-links.open a {
     font-size: 16px;
-    color: var(--cream);
+    color: var(--white);
+  }
+
+  .nav-links.open a.nav-cta {
+    color: var(--white);
   }
 
   .nav-hamburger {
@@ -1295,30 +1360,8 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .about-image-wrap {
-    margin-bottom: 32px;
-  }
-
-  .about-img {
-    aspect-ratio: 16 / 9;
-  }
-
-  .about-img-badge {
-    width: 100px;
-    height: 100px;
-    bottom: -12px;
-    right: -8px;
-  }
-
-  .badge-num {
-    font-size: 28px;
-  }
-
+  .about-image-wrap,
   .om-image-stack {
-    margin-bottom: 32px;
-  }
-
-  .om-img-inset {
     display: none;
   }
 
@@ -1372,7 +1415,7 @@ footer p {
 
   .hstat {
     border-right: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-dark);
   }
 
   footer {
@@ -1414,64 +1457,5 @@ footer p {
 
   .band-caption h3 {
     font-size: 24px;
-  }
-}
-
-/* ==========================================================================
-   Page Content (generic pages, 404)
-   ========================================================================== */
-.page-content {
-  padding: 140px 56px 110px;
-}
-
-.page-404 {
-  text-align: center;
-}
-
-.page-404 p {
-  color: var(--muted);
-  margin-top: 16px;
-  font-size: 16px;
-}
-
-.page-404 .btn-gold {
-  margin-top: 32px;
-}
-
-@media (max-width: 960px) {
-  .page-content {
-    padding: 120px 24px 72px;
-  }
-}
-
-/* ==========================================================================
-   Print Styles
-   ========================================================================== */
-@media print {
-  body {
-    background: #fff;
-    color: #000;
-  }
-
-  nav, .hero-glow, .hero-overlay, .skip-link {
-    display: none;
-  }
-
-  section {
-    padding: 32px 0;
-    break-inside: avoid;
-  }
-
-  .animate-on-scroll {
-    opacity: 1;
-    transform: none;
-  }
-
-  h1, h2, h3, h4 {
-    color: #000;
-  }
-
-  a {
-    color: #0e7c6e;
   }
 }

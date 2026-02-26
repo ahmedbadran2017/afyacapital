@@ -2,24 +2,24 @@
   <!-- Afya Capital Logo — Light/White version for dark backgrounds -->
 
   <!-- Hexagon Mark -->
-  <path d="M30 3L52 14.5V37.5L30 49L8 37.5V14.5L30 3Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1.2"/>
+  <path d="M30 3L52 14.5V37.5L30 49L8 37.5V14.5L30 3Z" fill="#101824" stroke="#fa510f" stroke-width="1.2"/>
 
-  <!-- Letter A (gold) -->
-  <path d="M20 39L30 15L40 39" stroke="#c8963e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M23 31H37" stroke="#c8963e" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <!-- Letter A (orange) -->
+  <path d="M20 39L30 15L40 39" stroke="#fa510f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M23 31H37" stroke="#fa510f" stroke-width="2.2" stroke-linecap="round" fill="none"/>
 
-  <!-- Medical Cross (teal) -->
-  <path d="M30 20V26M27 23H33" stroke="#14a892" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+  <!-- Medical Cross (white) -->
+  <path d="M30 20V26M27 23H33" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
 
   <!-- Dot accent -->
-  <circle cx="30" cy="43" r="1.5" fill="#c8963e"/>
+  <circle cx="30" cy="43" r="1.5" fill="#fa510f"/>
 
   <!-- Text: AFYA (white) -->
-  <text x="68" y="29" font-family="Alexandria, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="0.02em">Afya</text>
+  <text x="68" y="29" font-family="DM Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="0.02em">Afya</text>
 
-  <!-- Text: CAPITAL (gold) -->
-  <text x="130" y="29" font-family="Alexandria, sans-serif" font-size="26" font-weight="700" fill="#c8963e" letter-spacing="0.02em">Capital</text>
+  <!-- Text: CAPITAL (orange) -->
+  <text x="130" y="29" font-family="DM Sans, sans-serif" font-size="26" font-weight="700" fill="#fa510f" letter-spacing="0.02em">Capital</text>
 
   <!-- Tagline -->
-  <text x="68" y="44" font-family="Alexandria, sans-serif" font-size="8.5" font-weight="500" fill="#14a892" letter-spacing="0.25em">HEALTHCARE INVESTMENT</text>
+  <text x="68" y="44" font-family="DM Sans, sans-serif" font-size="8.5" font-weight="500" fill="rgba(255,255,255,0.65)" letter-spacing="0.25em">HEALTHCARE INVESTMENT</text>
 </svg>
