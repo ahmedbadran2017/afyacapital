@@ -1,7 +1,7 @@
 /* ==========================================================================
    Afya Capital — Healthcare Investment Landing Page
    Modern business theme inspired by Corex Home Strategist
-   Font: DM Sans | Accent: #fa510f (orange)
+   Fonts: DM Sans + DM Serif Display (italic accent) | Accent: #fa510f (orange)
    ========================================================================== */
 
 :root {
@@ -305,6 +305,7 @@ a.nav-cta:hover {
 }
 
 h1 .italic {
+  font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-weight: 400;
   color: var(--main);
@@ -474,6 +475,7 @@ h2 {
 }
 
 h2 em {
+  font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-weight: 400;
   color: var(--main);
@@ -796,6 +798,7 @@ h2 em {
 }
 
 .band-caption h3 em {
+  font-family: 'DM Serif Display', serif;
   font-style: italic;
   font-weight: 400;
   color: var(--main);
