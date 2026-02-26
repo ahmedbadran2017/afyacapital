@@ -140,39 +140,12 @@ nav.scrolled {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.logo-mark {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.logo-text-group {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-name {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--black);
-}
-
-.logo-name span {
-  color: var(--main);
-}
-
-.logo-tagline {
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 3px;
-  font-weight: 500;
+.logo-wordmark {
+  display: block;
+  width: 140px;
+  height: auto;
 }
 
 .nav-links {
@@ -1237,19 +1210,11 @@ footer {
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.footer-logo .logo-name {
-  color: var(--white);
-}
-
-.footer-logo .logo-name span {
-  color: var(--main);
-}
-
-.footer-logo .logo-tagline {
-  color: var(--muted-light);
+.footer-logo .logo-wordmark {
+  width: 140px;
+  height: auto;
 }
 
 .footer-links {
@@ -1358,6 +1323,10 @@ footer p {
 
   .nav-hamburger {
     display: flex;
+  }
+
+  .logo-wordmark {
+    width: 110px;
   }
 
   section {

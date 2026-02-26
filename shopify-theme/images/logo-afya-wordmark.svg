@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 72" fill="none">
+  <!-- Afya Capital — Stacked Wordmark (light version for dark backgrounds) -->
+
+  <!-- AFYA (orange) -->
+  <text x="110" y="26" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#fa510f" letter-spacing="0.18em" text-anchor="middle">AFYA</text>
+
+  <!-- CAPITAL (white) -->
+  <text x="110" y="50" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" letter-spacing="0.22em" text-anchor="middle">CAPITAL</text>
+
+  <!-- Decorative line — left -->
+  <line x1="24" y1="64" x2="62" y2="64" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+
+  <!-- Tagline -->
+  <text x="110" y="67" font-family="DM Sans, Helvetica, Arial, sans-serif" font-size="7" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.28em" text-anchor="middle">HEALTHCARE INVESTMENT</text>
+
+  <!-- Decorative line — right -->
+  <line x1="158" y1="64" x2="196" y2="64" stroke="rgba(255,255,255,0.3)" stroke-width="0.8"/>
+</svg>
