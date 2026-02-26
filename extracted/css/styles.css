@@ -805,48 +805,85 @@ h2 .accent {
 .pship-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;
+  gap: 20px;
 }
 
 .pship-card {
-  padding: 48px 44px;
+  padding: 36px 32px 32px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
-  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.pship-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border);
+  transition: background 0.3s;
 }
 
 .pship-card:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-  border-color: rgba(250, 81, 15, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(250, 81, 15, 0.25);
+}
+
+.pship-card:hover::before {
+  background: var(--main);
 }
 
 /* Featured partnership card */
 .pship-featured {
-  border-color: rgba(250, 81, 15, 0.3);
-  border-left: 3px solid var(--main);
+  border-color: rgba(250, 81, 15, 0.2);
+  background: linear-gradient(180deg, rgba(250, 81, 15, 0.03) 0%, var(--white) 50%);
+}
+
+.pship-featured::before {
+  height: 3px;
+  background: var(--main);
 }
 
 .pship-num {
-  font-size: 68px;
-  font-weight: 300;
-  color: rgba(250, 81, 15, 0.1);
-  line-height: 1;
-  margin-bottom: -16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--main);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pship-num::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
 }
 
 .pship-icon {
-  width: 52px;
-  height: 52px;
-  margin-bottom: 22px;
-  border-radius: 50%;
-  background: rgba(250, 81, 15, 0.08);
-  border: 1px solid rgba(250, 81, 15, 0.15);
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: rgba(250, 81, 15, 0.07);
+  border: 1px solid rgba(250, 81, 15, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.pship-card:hover .pship-icon {
+  background: rgba(250, 81, 15, 0.12);
+  border-color: rgba(250, 81, 15, 0.25);
 }
 
 .pship-icon svg {
@@ -858,36 +895,46 @@ h2 .accent {
 }
 
 .pship-card h3 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
   color: var(--black);
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
 }
 
 .pship-card p {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 18px;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.pship-card ul {
+  margin-top: auto;
 }
 
 .pship-card ul li {
   font-size: 13px;
-  color: var(--muted);
-  padding: 8px 0;
+  color: var(--text);
+  padding: 7px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
 }
 
+.pship-card ul li:last-child {
+  border-bottom: none;
+}
+
 .pship-card ul li::before {
-  content: '\2192';
-  color: var(--main);
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--main);
   flex-shrink: 0;
-  font-size: 12px;
-  margin-top: 1px;
 }
 
 /* ==========================================================================
