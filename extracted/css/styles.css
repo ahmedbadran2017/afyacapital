@@ -1,7 +1,7 @@
 /* ==========================================================================
    Afya Capital — Healthcare Investment Landing Page
    Modern business theme inspired by Corex Home Strategist
-   Fonts: DM Sans + DM Serif Display (italic accent) | Accent: #fa510f (orange)
+   Font: DM Sans | Accent: #fa510f (orange)
    ========================================================================== */
 
 :root {
@@ -67,6 +67,25 @@ button {
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
+}
+
+/* --- Skip link (accessibility) --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--main);
+  color: var(--white);
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  z-index: 999;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /* --- Focus styles --- */
@@ -195,8 +214,12 @@ a.nav-cta:hover {
 .nav-hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
-  padding: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
   z-index: 201;
 }
 
@@ -304,13 +327,6 @@ a.nav-cta:hover {
   animation: fadeUp 0.7s ease 0.25s both;
 }
 
-h1 .italic {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--main);
-}
-
 h1 .accent {
   color: var(--main);
 }
@@ -355,7 +371,7 @@ h1 .accent {
 .btn-ghost {
   padding: 15px 38px;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: var(--white);
   font-size: 12px;
   letter-spacing: 0.14em;
@@ -474,10 +490,7 @@ h2 {
   color: var(--black);
 }
 
-h2 em {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-weight: 400;
+h2 .accent {
   color: var(--main);
 }
 
@@ -797,10 +810,7 @@ h2 em {
   line-height: 1.2;
 }
 
-.band-caption h3 em {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-weight: 400;
+.band-caption h3 .accent {
   color: var(--main);
 }
 
@@ -1090,7 +1100,7 @@ h2 em {
   color: var(--white);
 }
 
-#expertise h2 em {
+#expertise h2 .accent {
   color: var(--main);
 }
 
@@ -1247,7 +1257,7 @@ footer {
   align-items: center;
   gap: 12px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .footer-links a {
@@ -1265,7 +1275,7 @@ footer {
 
 footer p {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.05em;
 }
 
