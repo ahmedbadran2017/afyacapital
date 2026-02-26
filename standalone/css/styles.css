@@ -1,7 +1,7 @@
 /* ==========================================================================
    Afya Capital — Healthcare Investment Landing Page
    Modern business theme inspired by Corex Home Strategist
-   Font: DM Sans | Accent: #fa510f (orange)
+   Font: Inter | Accent: #fa510f (orange)
    ========================================================================== */
 
 :root {
@@ -12,12 +12,11 @@
   --gray: #f0f3f4;
   --gray-light: #eeeee5;
   --white: #ffffff;
-  --yellow: #e8bf69;
-  --green: #16bd74;
+  --text: #2d3748;
   --border: rgba(16, 24, 36, 0.08);
   --border-dark: rgba(255, 255, 255, 0.1);
   --muted: #6b7280;
-  --muted-light: rgba(255, 255, 255, 0.65);
+  --muted-light: rgba(255, 255, 255, 0.75);
   --max-w: 1320px;
 }
 
@@ -35,7 +34,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--white);
   color: var(--black);
   overflow-x: hidden;
@@ -144,7 +143,7 @@ nav.scrolled {
 
 .logo-wordmark {
   display: block;
-  width: 140px;
+  width: 180px;
   height: auto;
 }
 
@@ -241,8 +240,8 @@ a.nav-cta:hover {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(105deg, rgba(16, 24, 36, 0.96) 0%, rgba(16, 24, 36, 0.82) 45%, rgba(16, 24, 36, 0.45) 100%),
-    linear-gradient(to top, rgba(16, 24, 36, 0.7) 0%, transparent 50%);
+    linear-gradient(105deg, rgba(16, 24, 36, 0.92) 0%, rgba(16, 24, 36, 0.7) 40%, rgba(16, 24, 36, 0.3) 100%),
+    linear-gradient(to top, rgba(16, 24, 36, 0.6) 0%, transparent 40%);
 }
 
 .hero-glow {
@@ -1139,7 +1138,7 @@ h2 .accent {
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  gap: 16px;
 }
 
 .exp-item {
@@ -1260,7 +1259,7 @@ footer {
 }
 
 .footer-logo .logo-wordmark {
-  width: 140px;
+  width: 160px;
   height: auto;
 }
 
@@ -1373,7 +1372,7 @@ footer p {
   }
 
   .logo-wordmark {
-    width: 110px;
+    width: 140px;
   }
 
   section {
