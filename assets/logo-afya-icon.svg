@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+  <!-- Afya Capital — Icon Mark Only -->
+
+  <!-- Hexagon -->
+  <path d="M30 5L54 18V44L30 57L6 44V18L30 5Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1.4"/>
+
+  <!-- Inner hexagon glow line -->
+  <path d="M30 10L49 20.5V41.5L30 52L11 41.5V20.5L30 10Z" fill="none" stroke="rgba(200,150,62,0.12)" stroke-width="0.8"/>
+
+  <!-- Letter A -->
+  <path d="M21 43L30 16L39 43" stroke="#c8963e" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M24 35H36" stroke="#c8963e" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+
+  <!-- Medical Cross -->
+  <path d="M30 22V29M26.5 25.5H33.5" stroke="#14a892" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+  <!-- Bottom dot -->
+  <circle cx="30" cy="49" r="1.8" fill="#c8963e"/>
+</svg>

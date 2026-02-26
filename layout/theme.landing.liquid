@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ request.locale.iso_code }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,23 @@
   <meta name="description" content="{{ page.meta_description | default: 'Afya Capital is a diversified healthcare holding company developing, operating, and co-investing in high-growth hospital ventures across Africa.' }}">
   <meta name="theme-color" content="#08111e">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ canonical_url }}">
+
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title | default: page_title }} — {{ shop.name }}">
   <meta property="og:description" content="{{ page.meta_description | default: 'A diversified healthcare holding company developing, operating, and co-investing in high-growth hospital ventures across Africa.' }}">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="{{ 'og-image.jpg' | asset_url }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | default: page_title }} — {{ shop.name }}">
+  <meta name="twitter:description" content="{{ page.meta_description | default: 'Healthcare investment partner developing hospital ventures across Africa.' }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ 'logo-afya-icon.svg' | asset_url }}">
 
   <!-- Required by Shopify -->
   {{ content_for_header }}
@@ -24,8 +37,26 @@
 
   <!-- Landing Page Styles -->
   {{ 'afya-landing.css' | asset_url | stylesheet_tag }}
+
+  <!-- Theme Settings → CSS Variables -->
+  <style>
+    :root {
+      --teal: {{ settings.color_primary | default: '#0e7c6e' }};
+      --gold: {{ settings.color_secondary | default: '#c8963e' }};
+      --deep: {{ settings.color_background | default: '#08111e' }};
+      --cream: {{ settings.color_text | default: '#f4efe6' }};
+    }
+  </style>
+
+  <!-- Noscript fallback: show hidden sections if JS disabled -->
+  <noscript>
+    <style>.animate-on-scroll { opacity: 1; transform: none; }</style>
+  </noscript>
 </head>
 <body>
+  <!-- Skip to content -->
+  <a href="#hero" class="skip-link">Skip to main content</a>
+
   {{ content_for_layout }}
 
   <!-- Landing Page JS -->

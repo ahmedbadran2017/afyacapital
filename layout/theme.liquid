@@ -7,11 +7,23 @@
   <meta name="description" content="{{ page_description | escape }}">
   <meta name="theme-color" content="#08111e">
 
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ canonical_url }}">
+
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page_title }} — {{ shop.name }}">
   <meta property="og:description" content="{{ page_description | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="{{ 'og-image.jpg' | asset_url }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }} — {{ shop.name }}">
+  <meta name="twitter:description" content="{{ page_description | escape }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ 'logo-afya-icon.svg' | asset_url }}">
 
   <!-- Required by Shopify -->
   {{ content_for_header }}
@@ -25,19 +37,30 @@
 
   <!-- Styles -->
   {{ 'afya-landing.css' | asset_url | stylesheet_tag }}
+
+  <!-- Theme Settings → CSS Variables -->
+  <style>
+    :root {
+      --teal: {{ settings.color_primary | default: '#0e7c6e' }};
+      --gold: {{ settings.color_secondary | default: '#c8963e' }};
+      --deep: {{ settings.color_background | default: '#08111e' }};
+      --cream: {{ settings.color_text | default: '#f4efe6' }};
+    }
+  </style>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <style>.animate-on-scroll { opacity: 1; transform: none; }</style>
+  </noscript>
 </head>
 <body>
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="/" class="nav-logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1"/>
-        <path d="M13 29L20 11L27 29" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 23H24.5" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M20 16V20M18 18H22" stroke="#14a892" stroke-width="1.4" stroke-linecap="round"/>
-        <circle cx="20" cy="32" r="1.2" fill="#c8963e"/>
-      </svg>
+      <img src="{{ 'logo-afya-icon.svg' | asset_url }}" alt="Afya Capital" class="logo-mark" width="40" height="40">
       <div class="logo-text-group">
         <div class="logo-name">Afya <span>Capital</span></div>
         <div class="logo-tagline">Healthcare Investment</div>
@@ -50,27 +73,21 @@
       <a href="/#expertise">Expertise</a>
       <a href="/#contact" class="nav-cta">Invest With Us</a>
     </div>
-    <button class="nav-hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <button type="button" class="nav-hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <main>
+  <main id="main-content">
     {{ content_for_layout }}
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1"/>
-        <path d="M13 29L20 11L27 29" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M15.5 23H24.5" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M20 16V20M18 18H22" stroke="#14a892" stroke-width="1.4" stroke-linecap="round"/>
-        <circle cx="20" cy="32" r="1.2" fill="#c8963e"/>
-      </svg>
+      <img src="{{ 'logo-afya-icon.svg' | asset_url }}" alt="Afya Capital" class="logo-mark" width="40" height="40">
       <div class="logo-text-group">
         <div class="logo-name">Afya <span>Capital</span></div>
         <div class="logo-tagline">Healthcare Investment</div>

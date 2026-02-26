@@ -12,7 +12,7 @@
   --gold: #c8963e;
   --gold-light: #e8b96a;
   --cream: #f4efe6;
-  --muted: rgba(244, 239, 230, 0.65);
+  --muted: rgba(244, 239, 230, 0.75);
   --border: rgba(255, 255, 255, 0.07);
   --max-w: 1320px;
 }
@@ -28,6 +28,26 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+/* --- Skip Link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 300;
+  padding: 12px 24px;
+  background: var(--teal);
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 body {
@@ -119,6 +139,7 @@ nav {
   width: 40px;
   height: 40px;
   flex-shrink: 0;
+  border-radius: 0;
 }
 
 .logo-text-group {
@@ -158,7 +179,7 @@ nav {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(244, 239, 230, 0.6);
+  color: rgba(244, 239, 230, 0.75);
   transition: color 0.3s;
 }
 
@@ -672,7 +693,7 @@ h2 em {
   padding: 4px 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
-  color: rgba(244, 239, 230, 0.5);
+  color: rgba(244, 239, 230, 0.7);
 }
 
 .country-card-more {
@@ -853,7 +874,7 @@ h2 em {
 
 .pship-card ul li {
   font-size: 13px;
-  color: rgba(244, 239, 230, 0.5);
+  color: rgba(244, 239, 230, 0.7);
   padding: 8px 0;
   border-bottom: 1px solid var(--border);
   display: flex;
@@ -1162,7 +1183,7 @@ footer {
   align-items: center;
   gap: 12px;
   font-size: 12px;
-  color: rgba(244, 239, 230, 0.4);
+  color: rgba(244, 239, 230, 0.6);
 }
 
 .footer-links a {
@@ -1180,7 +1201,7 @@ footer {
 
 footer p {
   font-size: 12px;
-  color: rgba(244, 239, 230, 0.3);
+  color: rgba(244, 239, 230, 0.55);
   letter-spacing: 0.05em;
 }
 
@@ -1274,8 +1295,30 @@ footer p {
     grid-template-columns: 1fr;
   }
 
-  .about-image-wrap,
+  .about-image-wrap {
+    margin-bottom: 32px;
+  }
+
+  .about-img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about-img-badge {
+    width: 100px;
+    height: 100px;
+    bottom: -12px;
+    right: -8px;
+  }
+
+  .badge-num {
+    font-size: 28px;
+  }
+
   .om-image-stack {
+    margin-bottom: 32px;
+  }
+
+  .om-img-inset {
     display: none;
   }
 
@@ -1371,5 +1414,64 @@ footer p {
 
   .band-caption h3 {
     font-size: 24px;
+  }
+}
+
+/* ==========================================================================
+   Page Content (generic pages, 404)
+   ========================================================================== */
+.page-content {
+  padding: 140px 56px 110px;
+}
+
+.page-404 {
+  text-align: center;
+}
+
+.page-404 p {
+  color: var(--muted);
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+.page-404 .btn-gold {
+  margin-top: 32px;
+}
+
+@media (max-width: 960px) {
+  .page-content {
+    padding: 120px 24px 72px;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  nav, .hero-glow, .hero-overlay, .skip-link {
+    display: none;
+  }
+
+  section {
+    padding: 32px 0;
+    break-inside: avoid;
+  }
+
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000;
+  }
+
+  a {
+    color: #0e7c6e;
   }
 }
