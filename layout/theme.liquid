@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title }} — {{ shop.name }}</title>
+  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="theme-color" content="#08111e">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page_title }} — {{ shop.name }}">
+  <meta property="og:description" content="{{ page_description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ canonical_url }}">
+
+  <!-- Required by Shopify -->
+  {{ content_for_header }}
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  {{ 'afya-landing.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1"/>
+        <path d="M13 29L20 11L27 29" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 23H24.5" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M20 16V20M18 18H22" stroke="#14a892" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="20" cy="32" r="1.2" fill="#c8963e"/>
+      </svg>
+      <div class="logo-text-group">
+        <div class="logo-name">Afya <span>Capital</span></div>
+        <div class="logo-tagline">Healthcare Investment</div>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/#about">About</a>
+      <a href="/#network">Our Network</a>
+      <a href="/#partnerships">Partnerships</a>
+      <a href="/#expertise">Expertise</a>
+      <a href="/#contact" class="nav-cta">Invest With Us</a>
+    </div>
+    <button class="nav-hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <main>
+    {{ content_for_layout }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 2L36 11V29L20 38L4 29V11L20 2Z" fill="#0d1f35" stroke="#c8963e" stroke-width="1"/>
+        <path d="M13 29L20 11L27 29" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.5 23H24.5" stroke="#c8963e" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M20 16V20M18 18H22" stroke="#14a892" stroke-width="1.4" stroke-linecap="round"/>
+        <circle cx="20" cy="32" r="1.2" fill="#c8963e"/>
+      </svg>
+      <div class="logo-text-group">
+        <div class="logo-name">Afya <span>Capital</span></div>
+        <div class="logo-tagline">Healthcare Investment</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:invest@afyacapital.com">invest@afyacapital.com</a>
+      <span class="footer-sep">&middot;</span>
+      <span>Delaware, USA</span>
+    </div>
+    <p>&copy; {{ 'now' | date: '%Y' }} Afya Capital LLC. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="{{ 'afya-landing.js' | asset_url }}" defer></script>
+</body>
+</html>
