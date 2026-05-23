@@ -291,13 +291,6 @@ a.nav-cta:hover {
   animation: fadeUp 0.7s ease 0.25s both;
 }
 
-h1 .italic {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: var(--gold);
-}
-
 h1 .accent {
   color: var(--teal-light);
 }
@@ -440,10 +433,7 @@ h2 {
   color: var(--cream);
 }
 
-h2 em {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 400;
+h2 .accent {
   color: var(--gold);
 }
 
@@ -760,10 +750,7 @@ h2 em {
   line-height: 1.2;
 }
 
-.band-caption h3 em {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 400;
+.band-caption h3 .accent {
   color: var(--gold);
 }
 

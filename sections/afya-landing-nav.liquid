@@ -1,24 +1,17 @@
-<nav aria-label="Main navigation">
-  <a href="/" class="nav-logo">
-    <img src="{{ 'logo-afya-icon.svg' | asset_url }}" alt="Afya Capital" class="logo-mark" width="40" height="40">
-    <div class="logo-text-group">
-      <div class="logo-name">Afya <span>Capital</span></div>
-      <div class="logo-tagline">Healthcare Investment</div>
-    </div>
-  </a>
-  <div class="nav-links" id="navLinks">
-    <a href="#about">About</a>
-    <a href="#network">Our Network</a>
-    <a href="#partnerships">Partnerships</a>
-    <a href="#expertise">Expertise</a>
-    <a href="#contact" class="nav-cta">Invest With Us</a>
+<header class="nav">
+  <div class="inner">
+    <a href="/" class="brand">
+      <img src="{{ 'logo-dark-no-tagline.png' | asset_url }}" alt="Afya Capital" height="34"/>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#network">Our Network</a>
+      <a href="#partnerships">Partnerships</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#contact" class="cta">Invest With Us &rarr;</a>
+    </nav>
   </div>
-  <button type="button" class="nav-hamburger" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+</header>
 
 {% schema %}
 {
