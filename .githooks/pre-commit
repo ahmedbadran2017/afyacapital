@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Auto-mirror standalone/ → docs/ before every commit.
+# Lets you edit standalone/ only; docs/ stays in sync for GitHub Pages.
+
+set -e
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+SRC="$REPO_ROOT/standalone"
+DST="$REPO_ROOT/docs"
+
+# Skip if standalone/ has no staged changes
+if git diff --cached --quiet -- standalone/ 2>/dev/null; then
+  exit 0
+fi
+
+echo "→ Mirroring standalone/ → docs/ for GitHub Pages…"
+mkdir -p "$DST"
+# Sync everything except backup files
+rsync -a --delete \
+  --exclude='*.bak' \
+  --exclude='.DS_Store' \
+  "$SRC/" "$DST/"
+
+# Stage the mirrored changes so they go in the same commit
+git add docs/
+echo "→ docs/ updated and staged."
