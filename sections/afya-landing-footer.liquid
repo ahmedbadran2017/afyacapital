@@ -1,13 +1,49 @@
 <footer>
-  <div class="footer-logo">
-    <img src="{{ 'logo-afya-wordmark.svg' | asset_url }}" alt="Afya Capital — Healthcare Investment" class="logo-wordmark" width="160" height="52">
+  <div class="container">
+    <div class="top">
+      <div class="col brand-col">
+        <img src="{{ 'logo-dark-no-tagline.png' | asset_url }}" alt="Afya Capital" />
+        <p>Healthcare investment partner. Developing, operating, and co-investing in hospital ventures across Africa.</p>
+      </div>
+
+      <div class="col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#about">About Afya Capital</a></li>
+          <li><a href="#network">Our Network</a></li>
+          <li><a href="#partnerships">Partnership Models</a></li>
+          <li><a href="#expertise">Our Expertise</a></li>
+          <li><a href="#contact">Invest With Us</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:invest@afyacapital.com">invest@afyacapital.com</a></li>
+          <li><a href="mailto:info@afyacapital.com">info@afyacapital.com</a></li>
+          <li><a href="#">Delaware, USA</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Active Markets</h5>
+        <ul>
+          <li><a href="#network">&#x1F1F0;&#x1F1EA; Kenya</a></li>
+          <li><a href="#network">&#x1F1EC;&#x1F1ED; Ghana</a></li>
+          <li><a href="#network">&#x1F1F2;&#x1F1E6; Morocco</a></li>
+          <li><a href="#network">&#x1F1FA;&#x1F1EC; Uganda</a></li>
+          <li><a href="#network">&#x1F1E8;&#x1F1E9; DR Congo</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} Afya Capital LLC. All rights reserved.</span>
+      <span>HEALTHCARE INVESTMENT &middot; AFRICA</span>
+    </div>
   </div>
-  <div class="footer-links">
-    <a href="mailto:invest@afyacapital.com">invest@afyacapital.com</a>
-    <span class="footer-sep">&middot;</span>
-    <span>Delaware, USA</span>
-  </div>
-  <p>&copy; {{ 'now' | date: '%Y' }} Afya Capital LLC. All rights reserved.</p>
 </footer>
 
 {% schema %}
