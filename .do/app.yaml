@@ -1,0 +1,14 @@
+name: afyacapital
+region: nyc
+
+static_sites:
+  - name: afyacapital-site
+    github:
+      repo: ahmedbadran2017/afyacapital
+      branch: main
+      deploy_on_push: true
+    source_dir: standalone
+    index_document: index.html
+    error_document: index.html
+    routes:
+      - path: /
